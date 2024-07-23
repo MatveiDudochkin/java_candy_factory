@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Info By Supplier</title>
+</head>
+<body>
+<p th:text="${supplierShowInfo.getName()}"></p>
+<p th:text="${supplierShowInfo.getAddress()}"></p>
+<a th:href="@{/supplier/{id}/edit(id=${supplierShowInfo.getId()})}">Edit</a>
+<form th:method="DELETE" th:action="@{/supplier/{id}(id=${supplierShowInfo.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

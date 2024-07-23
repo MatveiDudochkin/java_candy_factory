@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Type Show</title>
+</head>
+<body>
+<p th:text="${product.getType()}"></p>
+<p th:text="${product.getDescription()}"></p>
+
+
+<a th:href="@{/productType/{id}/edit(id=${product.getId()})}">Edit product</a>
+<form th:method="DELETE" th:action="@{/productType/{id}(id=${product.getId()})}">
+    <input type="submit" value="Delete this product type">
+</form>
+</body>
+</html>

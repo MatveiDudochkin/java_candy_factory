@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Owner</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/owner/{id}(id=${owner.getId()})}" th:object="${owner}">
+    <label for="id">Enter id: </label>
+    <input type="text" th:field="*{id}" id="id"/>
+    <div style="color:red" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">ID Error</div>
+    <br/>
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="surname">Enter surname: </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</div>
+    <br/>
+    <label for="phone">Enter phone: </label>
+    <input type="text" th:field="*{phone}" id="phone"/>
+    <div style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone Error</div>
+    <br/>
+    <label for="email">Enter email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Address Error</div>
+    <br/>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
